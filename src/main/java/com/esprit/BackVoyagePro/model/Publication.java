@@ -1,12 +1,10 @@
 package com.esprit.BackVoyagePro.model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import lombok.NonNull;
 
 public class Publication implements Serializable{
 
@@ -14,16 +12,15 @@ public class Publication implements Serializable{
     @GeneratedValue
     private Long idPub;
 
- 
-    @NonNull
     private String title;
 
-   
-    @NonNull
-    @Column(columnDefinition = "TEXT")
     private String content;
 
-    private String Archive;
+    private Boolean archive;
+
+    private LocalDateTime dateTimeOfPub = LocalDateTime.now();
+
+    private String imageUrl;
 
 
     
